@@ -38,11 +38,12 @@
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         width: 1000px;
-        height: 350px;
         overflow: hidden;
+        flex-wrap: wrap;
       }
 
       .card {
+        width: 550px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -63,10 +64,10 @@
       }
 
       .share .img,
-      .share img {
+      .share > .img > img {
         height: 100%;
         object-fit: cover;
-        object-position: center center;
+        object-position: left center;
         border-radius: 100%;
       }
 
@@ -85,6 +86,36 @@
       .share .icon {
         margin-left: auto;
         height: 100%;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        
+      }
+
+      .share .icon img {
+        width: 30px;
+        object-fit: cover;
+        object-position: center center;
+        cursor: pointer;
+      }
+
+      .share .icon .option {
+        display: none;
+        position: absolute;
+        height: 50px;
+        width: 200px;
+        background-color: hsl(217, 19%, 35%);
+        align-items: center;
+        justify-content: center;
+        margin-top: -100px;
+        margin-left: -100px;
+        column-gap: 10px;
+        border-radius: 10px;
+      }
+
+      .share_icon:hover ~ .option {
+        display: flex;
       }
 
       .image > img {
@@ -121,12 +152,20 @@
             <p>28 Jun 2020</p>
           </div>
           <div class="icon">
-            <img src="images/icon-share.svg" alt="">
+            <div class="share_icon">
+              <img src="images/icon-share.svg" alt=""/>
+            </div>
+            <div class="option hidden">
+              <h3>Share</h3>
+              <img src="images/icon-facebook.svg" alt="">
+              <img src="images/icon-twitter.svg" alt="">
+              <img src="images/icon-pinterest.svg" alt="">
+            </div>
           </div>
         </div>
       </div>
     </div>
-
+    
     <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
