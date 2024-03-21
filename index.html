@@ -55,6 +55,23 @@
         color: hsl(217, 19%, 35%);
       }
 
+      #share_icon {
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        -webkit-mask-image: url(images/icon-share.svg);
+        mask-image: url(images/icon-share.svg);
+        background-color: hsl(217, 19%, 35%);
+        width: 25px !important;
+        height: 20px !important;
+        display: block;
+        margin: 5px 5px 10px 5px;
+      }
+
+      .share_icon {
+        background-color: hsl(212, 23%, 69%);
+        border-radius: 100%;
+      }
+
       .share {
         height: 50px;
         width: 100%;
@@ -90,7 +107,6 @@
         display: flex;
         align-items: center;
         position: relative;
-        
       }
 
       .share .icon img {
@@ -114,9 +130,9 @@
         border-radius: 10px;
       }
 
-      .share_icon:hover ~ .option {
+      /* .share_icon:hover ~ .option {
         display: flex;
-      }
+      } */
 
       .image > img {
         height: 350px;
@@ -153,19 +169,20 @@
           </div>
           <div class="icon">
             <div class="share_icon">
-              <img src="images/icon-share.svg" alt=""/>
+              <!-- <img src="images/icon-share.svg" alt="" /> -->
+              <i id="share_icon"></i>
             </div>
             <div class="option hidden">
               <h3>Share</h3>
-              <img src="images/icon-facebook.svg" alt="">
-              <img src="images/icon-twitter.svg" alt="">
-              <img src="images/icon-pinterest.svg" alt="">
+              <img src="images/icon-facebook.svg" alt="" />
+              <img src="images/icon-twitter.svg" alt="" />
+              <img src="images/icon-pinterest.svg" alt="" />
             </div>
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
