@@ -15,6 +15,10 @@
     <title>Frontend Mentor | Article preview component</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
     <style>
       .attribution {
         font-size: 11px;
@@ -29,7 +33,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-family: sans-serif;
+        font-family: Manrope;
       }
 
       .container {
@@ -39,15 +43,13 @@
         border-radius: 10px;
         width: 1000px;
         overflow: hidden;
-        flex-wrap: wrap;
+        height: 350px;
       }
 
       .card {
-        width: 550px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-around;
         margin: 50px;
       }
 
@@ -102,8 +104,8 @@
 
       .share .icon {
         margin-left: auto;
+        margin-right: 0;
         height: 100%;
-        width: 80px;
         display: flex;
         align-items: center;
         position: relative;
@@ -117,11 +119,11 @@
       }
 
       .share .icon .option {
-        display: none;
         position: absolute;
         height: 50px;
         width: 200px;
         background-color: hsl(217, 19%, 35%);
+        display: flex;
         align-items: center;
         justify-content: center;
         margin-top: -100px;
@@ -130,15 +132,40 @@
         border-radius: 10px;
       }
 
-      /* .share_icon:hover ~ .option {
-        display: flex;
-      } */
-
       .image > img {
         height: 350px;
         width: 350px;
         object-fit: cover;
         object-position: center center;
+      }
+
+      .title, .description {
+        text-align: justify;
+      }
+
+      @media screen and (max-width: 768px) {
+        .card {
+          margin: 0 25px 25px 25px;  
+        }
+
+        .container {
+          width: 350px;
+          flex-direction: column;
+          height: auto;
+        }
+
+        .share {
+          height: auto;
+        }
+
+        .share img {
+          width: 50px;
+          height: 50px;
+        }
+
+        .share > .text > * {
+          margin: 5px !important;
+        }
       }
     </style>
   </head>
@@ -149,11 +176,11 @@
       </div>
       <div class="card">
         <div class="text">
-          <h2>
+          <h2 class="title">
             Shift the overall look and feel by adding these wonderful touches to
             furniture in your home
           </h2>
-          <p>
+          <p class="description">
             Ever been in a room and felt like something was missing? Perhaps it
             felt slightly bare and uninviting. I’ve got some simple tips to help
             you make any room feel complete. Michelle Appleton 28 Jun 2020
@@ -168,26 +195,12 @@
             <p>28 Jun 2020</p>
           </div>
           <div class="icon">
-            <div class="share_icon">
-              <!-- <img src="images/icon-share.svg" alt="" /> -->
+            <div class="share_icon" onclick="document.querySelector('.option').classList.toggle('hidden')">
               <i id="share_icon"></i>
-            </div>
-            <div class="option hidden">
-              <h3>Share</h3>
-              <img src="images/icon-facebook.svg" alt="" />
-              <img src="images/icon-twitter.svg" alt="" />
-              <img src="images/icon-pinterest.svg" alt="" />
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div> -->
   </body>
 </html>
